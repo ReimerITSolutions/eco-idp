@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Expires" CONTENT="-1">
+    <meta charset="utf-8">
+    <title>Eco OpenID Provider</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" type="text/css" href="./bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./theme.css">
+    <link rel="stylesheet" type="text/css" href="./ecoidp.css">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <!--[if lt IE 7 ]> <body class="ie ie6"> <![endif]-->
+  <!--[if IE 7 ]> <body class="ie ie7 "> <![endif]-->
+  <!--[if IE 8 ]> <body class="ie ie8 "> <![endif]-->
+  <!--[if IE 9 ]> <body class="ie ie9 "> <![endif]-->
+  <!--[if (gt IE 9)|!(IE)]><!-->
+  <body class="">
+  <!--<![endif]-->
+
+    <div class="login">
+    <div class="">
+        <div class="block" style="padding:1em;">
+        <img src="../Logo_ECO.png" style="width:30%;margin-bottom:10px;" alt=""/>
+        <form method="POST" action="login">
+          <input type="submit" name="login" style="position: absolute; left: -999px; top: -999px; height: 0px; width: 0px"/>
+
+          <ul class="chooseLang flagList">
+              <input type="submit"  style="background: url('../en.png');background-size: contain;width:25px;height:19px;background-repeat: no-repeat;border:0px;color: transparent;" name="languageButton" value="en" title="English language" />
+              <input type="submit"  style="background: url('../es.png');background-size: contain;width:25px;height:19px;background-repeat: no-repeat;border:0px;color: transparent;" name="languageButton" value="es" title="Lengua española"/>
+              <input type="submit"  style="background: url('../fr.png');background-size: contain;width:25px;height:19px;background-repeat: no-repeat;border:0px;color: transparent;" name="languageButton" value="fr" title="Langue française"/>
+              <input type="submit"  style="background: url('../de.png');background-size: contain;width:25px;height:19px;background-repeat: no-repeat;border:0px;color: transparent;" name="languageButton" value="de" title="Deutsche Sprache"/>
+              <input type="submit"  style="background: url('../it.png');background-size: contain;width:25px;height:19px;background-repeat: no-repeat;border:0px;color: transparent;" name="languageButton" value="it" title="Lingua italiana" />
+              <input type="submit"  style="background: url('../pt.png');background-size: contain;width:25px;height:19px;background-repeat: no-repeat;border:0px;color: transparent;" name="languageButton" value="pt" title="Em português"/>
+          </ul>
+
+            <div class="block-header">
+                <h2>Accedi</h2>
+            </div>
+
+                <div class="form-group">
+                    <label>Email</label>
+                    <input autofocus="autofocus" tabindex="1" class="form-control" type="text" name="email" placeholder="Inserisci Email"/>
+                </div>
+
+                <div class="form-group">
+                    <label>Password</label>
+                    <a tabindex="3" class="reset-password pull-right" href="./forgotpw" >Password dimenticata?</a>
+                    <input tabindex="2" class="form-control" type="password" name="password" placeholder="Inserisci Password"/><br/>
+                    <div style="color:red;">
+                        <%=loginErrorMessage %>
+                    </div>
+                    <a tabindex="4" href="<%=registerUrl%>" class="sign-up" target="_blank">Non hai un account? Iscriviti!</a>
+                </div>
+
+
+                  <div class="form-actions">
+                      <input tabindex="5" class="btn btn-success pull-left" type="submit" value="Accedi" name="login"/>
+                      <input tabindex="6" class="btn pull-right" type="submit" value="Annulla" name="cancel"/>
+                      <div class="clearfix"></div>
+                  </div>
+              </form>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

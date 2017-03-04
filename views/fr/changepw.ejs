@@ -1,0 +1,122 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Eco Account</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" type="text/css" href="./bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./theme.css">
+    <link rel="stylesheet" type="text/css" href="./ecoidp.css">
+    <link rel="stylesheet" href="./kendo.common-bootstrap.min.css"  />
+    <link rel="stylesheet" href="./kendo.default.min.css"  />
+
+    <script src="./jquery.min.js"></script>
+    <script src="./kendo.custom.min.js"></script>
+    <script src="./changepwfr.js"></script>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <!--[if lt IE 7 ]> <body class="ie ie6"> <![endif]-->
+  <!--[if IE 7 ]> <body class="ie ie7 "> <![endif]-->
+  <!--[if IE 8 ]> <body class="ie ie8 "> <![endif]-->
+  <!--[if IE 9 ]> <body class="ie ie9 "> <![endif]-->
+  <!--[if (gt IE 9)|!(IE)]><!-->
+  <body class="">
+  <!--<![endif]-->
+
+
+
+<div class="login">
+  <div class="">
+      <div class="block" style="padding:1em;">
+      <img src="../Logo_ECO.png" style="width:30%;margin-bottom:10px;" alt=""/>
+            <div class="block-header">
+                <h2>Changer le mot de passe</h2>
+            </div>
+
+
+        <% if (errors.length>0) {%>
+        <div id="eco-register-errors">
+        Désolé. Les erreurs suivantes ont pu perturber votre requête:
+            <ul>
+              <% for(var i=0; i<errors.length; i++) {%>
+                 <li><%= errors[i] %> </li>
+              <% } %>
+            </ul>
+        </div>
+        <% } %>
+
+
+        <form role="form" id="changepw" method="POST">
+          <p>
+          Merci de vous identifier en complétant le formulaire suivant. Saisissez le mot de passe temporaire reçu par mail et choisissez ensuite votre nouveau mot de passe.
+          </p>
+          <div class="form-group" >
+              <label for="email" class="required">E-mail
+                  <input id="email" size="50" type="email" name="email" class="form-control" placeholder="Saisissez votre adresse mail"  type="email" required data-email-msg="Merci de saisir une adresse de messagerie valide" validationMessage="Merci de saisir une adresse de messagerie valide" data-bind="value: email" />
+              </label>
+          </div>
+
+
+            <label for="oldpassword" class="required">Ancien mot de passe</label>
+            <div class="input-group">
+                <input id="oldpassword" size="50" type="password" name="oldpassword" class="form-control" placeholder="Votre ancien mot de passe"  data-bind="value: oldpassword"/>
+            </div>
+
+            <label for="newpassword" class="required">Nouveau mot de passe</label>
+            <div class="input-group">
+                <input id="newpassword" size="50" type="password" name="newpassword" class="form-control" placeholder="Votre nouveau mot de passe"  data-bind="value: newpassword"/>
+                <span id="pwlabel" class="input-group-addon pwinvalid"></span>
+            </div>
+
+            <label for="newpassword2" class="sr-only">Re-saisir le mot de passe</label>
+            <div class="input-group">
+                <input id="newpassword2" size="50" type="password" name="newpassword2" class="form-control" placeholder="Confirmez votre nouveau mot de passe passe"  data-bind="value: newpassword2"/>
+            </div>
+
+          <div class="form-actions">
+            <a id="btnChange" href="#" class="btn btn-success pull-left">Changez le mot de passe</a>
+            <a id="btnCancel" href="#" class="btn pull-right">Annuler</a>
+
+            <div class="clearfix"></div>
+          </div>
+
+        </form>
+    </div>
+  </div>
+</div>
+
+<style scoped>
+    .pwvalid{
+        background-image: url('../Tick.png');
+        background-repeat: no-repeat;
+        width: 44px;
+        height: 46px;
+        position: relative;
+        top: -7px;
+        background-color: inherit;
+        border:none;
+    }
+    .pwinvalid{
+        background-image: url('../Cross.png');
+        background-repeat: no-repeat;
+        width: 44px;
+        height: 46px;
+        position: relative;
+        top: -7px;
+        background-color: inherit;
+        border:none;
+    }
+
+</style>
+
+
+</body>
+
+</html>
+

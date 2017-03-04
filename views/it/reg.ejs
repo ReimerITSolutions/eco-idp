@@ -1,0 +1,130 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Eco Account</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" type="text/css" href="./bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./theme.css">
+    <link rel="stylesheet" type="text/css" href="./ecoidp.css">
+    <link rel="stylesheet" href="./kendo.common-bootstrap.min.css"  />
+    <link rel="stylesheet" href="./kendo.default.min.css"  />
+
+    <script src="./jquery.min.js"></script>
+    <script src="./kendo.custom.min.js"></script>
+    <script src="./registerit.js"></script>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <!--[if lt IE 7 ]> <body class="ie ie6"> <![endif]-->
+  <!--[if IE 7 ]> <body class="ie ie7 "> <![endif]-->
+  <!--[if IE 8 ]> <body class="ie ie8 "> <![endif]-->
+  <!--[if IE 9 ]> <body class="ie ie9 "> <![endif]-->
+  <!--[if (gt IE 9)|!(IE)]><!-->
+  <body class="">
+  <!--<![endif]-->
+
+
+
+<div class="login">
+  <div class="well">
+      <div class="block" style="padding:1em;">
+            <img src="../Logo_ECO.png" style="width:30%;margin-bottom:10px;" alt=""/>
+            <div class="block-header">
+                <h2>Registrati su ECO</h2>
+            </div>
+
+
+        <% if (errors.length>0) {%>
+        <div id="eco-register-errors">
+        Spiacenti. Si è verificato il seguente errore (i) durante l’elaborazione della tua richiesta:
+            <ul>
+              <% for(var i=0; i<errors.length; i++) {%>
+                 <li><%= errors[i] %> </li>
+              <% } %>
+            </ul>
+        </div>
+        <% } %>
+
+
+        <form role="form" id="register" method="POST">
+          <div class="form-group" >
+              <label for="email" class="required">E-mail
+                  <input id="email" size="50" type="email" name="email" class="form-control" placeholder="Inserisci E-mail"  type="email" required data-email-msg="Per favore, inserire un indirizzo email valido" validationMessage="Per favore, inserire un indirizzo email valido" data-bind="value: email" value="<%=formfields.get('email')%>"/>
+              </label>
+          </div>
+
+
+            <label for="password" class="required">Password</label>
+            <div class="input-group">
+                <input id="password" size="50" type="password" name="password" class="form-control" placeholder="Scegli la tua password"  data-bind="value: password"/>
+                <span id="pwlabel" class="input-group-addon pwinvalid"></span>
+            </div>
+
+
+          <div class="form-group" >
+            <label for="password2" class="required">Digita nuovamente password</label>
+            <div class="input-group">
+                <input id="password2" size="50" type="password" name="password2" class="form-control" placeholder="Digita nuovamente la tua password"   data-bind="value: password2"/>
+            </div>
+          </div>
+
+          <div class="form-group">
+              <label for="nickname" >Nome Utente
+                  <input id="nickname" size="50" name="nickname" class="form-control" placeholder="Il tuo nome utente ECO" data-bind="value: nickName" value="<%=formfields.get('nickname')%>"/>
+              </label>
+          </div>
+
+          <div class="form-group">
+            <label>
+              <input type="checkbox" id="accept" name="accept" required validationMessage="Accettazione obbligatoria" data-bind="checked: accept" /> Accetto i <a href="tos.htm" target="_blank">termini di Servizio</a>
+            </label>
+            <span class="k-invalid-msg" data-for="accept"></span>
+          </div>
+
+          <div class="form-actions">
+            <a id="btnRegister" href="#" class="btn pull-left btn-success active">Registra</a>
+            <a id="btnCancel" href="#" class="btn pull-right">Annulla</a>
+
+            <div class="clearfix"></div>
+          </div>
+
+        </form>
+    </div>
+  </div>
+</div>
+
+<style scoped>
+    .pwvalid{
+        background-image: url('../Tick.png');
+        background-repeat: no-repeat;
+        width: 44px;
+        height: 46px;
+        position: relative;
+        top: -7px;
+        background-color: inherit;
+        border:none;
+    }
+    .pwinvalid{
+        background-image: url('../Cross.png');
+        background-repeat: no-repeat;
+        width: 44px;
+        height: 46px;
+        position: relative;
+        top: -7px;
+        background-color: inherit;
+        border:none;
+    }
+
+</style>
+
+
+</body>
+
+</html>
+
