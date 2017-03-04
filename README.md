@@ -1,7 +1,8 @@
 ﻿ECO OpenId Connect Provider
 ==================================================
 
-Copyright: Reimer IT Solutions
+Copyright 2014-2017: Reimer IT Solutions
+
 Licence: AGPLv3.
 
 --------------------------------------
@@ -12,8 +13,11 @@ The ECO project was funded from the European Community's CIP(Programme under gra
 Dependencies
 ===========
 NodeJs 0.12
+
 KendoUI (Commercial licence. Not included)
+
 MongoDB 2.6
+
 Redis
 
 
